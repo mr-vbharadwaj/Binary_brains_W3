@@ -1,0 +1,30 @@
+<section class="hero py-16" style="background-color:#ccc">
+    <div class="container mx-auto flex items-center justify-between">
+        <div class="w-1/2">
+            <h6 class="text-lg"><em>You need it, we get it..!</em></h6>
+            <h1 class="text-3xl md:text-6xl font-bold">Don't wait !</h1>
+            <% if (user && ( user.role === "customer")) { %>
+                <a href="/home"><button class="px-6 py-2 rounded-full text-white font-bold mt-4 btn-primary">Order Now</button>
+            <% } %>
+            <% if (user && (user.role === "business")) { %>
+                <a href="/"><button class="px-6 py-2 rounded-full text-white font-bold mt-4 btn-primary">View My Orders </button>
+            <% } %>
+            <% if(user && (user.role === "delivery")) { %>
+                <a href="#"><button class="px-6 py-2 rounded-full text-white font-bold mt-4 btn-primary">View My deliveries</button>
+            <% }%>
+            <% if(user && (user.role === "admin")) { %>
+                <a href="#"><button class="px-6 py-2 rounded-full text-white font-bold mt-4 btn-primary">View Statics</button>
+            <% } %> 
+            <% if(!user) { %>
+                <a href="/login"><button class="px-6 py-2 rounded-full text-white font-bold mt-4 btn-primary">Order Now</button>
+                <% }%>
+
+           
+        </div></a>
+        <div class="w-1/2">
+            <img src="/img/home.png" alt="">
+        </div>
+    </div>
+</section>
+
+

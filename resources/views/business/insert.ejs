@@ -1,0 +1,54 @@
+<% if(user && user.role === "business"){%>
+
+
+<section class="login flex justify-center pt-24">
+    <div class="w-full max-w-xs">
+        <form action="/insert" method="POST" class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4" enctype="multipart/form-data">
+            <% if(messages.error) { %>
+                <span class="text-red-500 text-sm"><%= messages.error %></span>
+                <% } %>
+
+                    <div class="mb-4">
+                        <label class="block text-gray-700 text-sm font-bold mb-2" for="name">
+                    Item name
+                </label>
+                        <input name="name" value="<%= messages.name %>" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="name" type="text" placeholder="Enter the name of item">
+                    </div>
+
+                    <div class="mb-4">
+                        <label class="block text-gray-700 text-sm font-bold mb-2" for="price">
+                    Price
+                </label>
+                        <input name="price" value="<%= messages.price %>" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="price" type="price" placeholder="Enter the price">
+                    </div>
+
+                    <div class="mb-4">
+                        <label class="block text-gray-700 text-sm font-bold mb-2" for="size">
+                      Business Type
+                        </label>
+                        <input name="size" value="<%= messages.size %>" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="size" type="size" placeholder="Enter your  business name">
+                    </div>
+
+                    <div class="mb-4">
+                        <label class="block text-gray-700 text-sm font-bold mb-2" for="image">
+                        Image
+                        </label>
+                        <input name="image" value="<%= messages.image %>" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="image" type="file" placeholder="upload the image">
+                    </div>
+
+
+
+                    <div class="flex items-center justify-between">
+                        <button class="btn-primary rounded-full text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit">
+                    Add 
+                </button>
+
+                    </div>
+        </form>
+        <p class="text-center text-gray-500 text-xs">
+           
+        </p>
+    </div>
+</section>
+
+<% }
